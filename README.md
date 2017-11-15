@@ -17,7 +17,7 @@ The dApp interprets encoded classical [Turing machines](https://en.wikipedia.org
 54:40   In depth code review
 ```
 
-[![DocumentationVideo]()]( "Video Title")
+[![DocumentationVideo]()](https://youtu.be/CAUo5aNmvz8 "Documentation Video: A Turing complete smart contract on the NEO blockchain")
 
 The last 30 minutes cover the code in detail. The arguments for the main functions are two strings and an array of integers. The first string denotes an auxiliary name for a machine to be uploaded on the blockchain. For programmer convenience, a Turing machine can be encoded as a string and is provided as the second argument. For efficiency sake, beyond testnet use, the "Assemble" step should be performed offline before the machine is deployed. Once there is a machine with the chosen name on the blockchain, then when invoking this name again, the second argument is used as the input string for the machine and is executed. The third argument is an array of integers that can optionally be used to modify default specifications such as the size of used character alphabet and maximal runtime measures as actions on the Turing machine tape.
 
@@ -41,15 +41,16 @@ The machine encoded as sequence of 3 strings of length three
 "010, 010, 011"
 ```
 
-detects if an input string from the 3 letter alphabet `{"x", "0", "1"}` contrains the character '1'. It encodes the simple program
+detects if an input string from the 3 letter alphabet `{'x', '0', '1'}` contrains the character '1'. It encodes the short program
 
 ```haskell
 foreach (char on tape)
-  if (start state):
-    if char is x:   overwrite with 0, move right on tape, go to start state,
-    if char is 0:   overwrite with 0, move right on tape, go to start state,
-    if char is 1:   overwrite with 0, move right on tape, go to accept state
-
+  if (current state == start state):
+    if char is 'x':  overwrite with '0',  move right on tape,  go to start state,
+    if char is '0':  overwrite with '0',  move right on tape,  go to start state,
+    if char is '1':  overwrite with '0',  move right on tape,  go to accept state,  return "Accepted!"
+    
+return "Rejected!"
 ```
 
 In such a way, a program with k states and possible m characters is of length 3 * k * m.
