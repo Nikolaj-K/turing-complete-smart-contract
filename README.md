@@ -17,7 +17,7 @@ The dApp interprets encoded classical [Turing machines](https://en.wikipedia.org
 54:40   In depth code review
 ```
 
-[![DocumentationVideo]()](https://youtu.be/CAUo5aNmvz8 "Documentation Video: A Turing complete smart contract on the NEO blockchain")
+[![DocumentationVideo](https://i.imgur.com/4PFvhpH.png)](https://youtu.be/CAUo5aNmvz8 "Documentation Video: A Turing complete smart contract on the NEO blockchain")
 
 The last 30 minutes cover the code in detail. The arguments for the main functions are two strings and an array of integers. The first string denotes an auxiliary name for a machine to be uploaded on the blockchain. For programmer convenience, a Turing machine can be encoded as a string and is provided as the second argument. For efficiency sake, beyond testnet use, the "Assemble" step should be performed offline before the machine is deployed. Once there is a machine with the chosen name on the blockchain, then when invoking this name again, the second argument is used as the input string for the machine and is executed. The third argument is an array of integers that can optionally be used to modify default specifications such as the size of used character alphabet and maximal runtime measures as actions on the Turing machine tape.
 
@@ -27,7 +27,7 @@ The config array in
 
 `int Main(string program_name, string code, params object[] config)`
 
-holds, in this order, used alphabet size (2), accept state index (1), max executed steps (len^2), tape padding (len), head position relative to tape input of lenth `len` (0), start state index (0). The default values are listed in brackets.
+holds, in this order, used alphabet size (2), accept state index (1), max executed steps (len^2), tape padding (len), head position relative to tape input of length `len` (0), start state index (0). The default values are listed in brackets.
 
 #### Testnet script hash
 
@@ -55,7 +55,7 @@ return "Rejected!"
 
 In such a way, a program with k states and possible m characters is of length 3 * k * m.
 
-Finite state machines are particularly straight forward to program, as in that case data in the memory is never visited a second time. The video above contains an example of a Turing machine that detects whether or not an input string is of length $2^n$ for some $n$. It also demonstrates basic arithmetic with Turing machines.
+Finite state machines are particularly straight forward to program, as in that case data in the memory is never visited a second time. The video above contains an example of a Turing machine that detects whether or not an input string is of length 2^n for some $n$. It also demonstrates basic arithmetic with Turing machines.
 
 This encoding is capable but of course extremely low level from a programming language perspective. Moreover, the Turing model of computation, with it's restricted steps on the memory tape, don't make for an efficiant computer. The next step of the project of distributed computing at that level is thus a deeper look at the NEO virtual machine. More research will be performed...
 
