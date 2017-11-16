@@ -55,6 +55,8 @@ return "Rejected!"
 
 In such a way, a program with k states and possible m characters is of length 3 * k * m.
 
+One short program is integer addition, stored under the program name `"add"` and addition of 3+3 is encoded by sequences of 1's seperated by a zero, i.e. `"1110111"`
+
 Finite state machines are particularly straight forward to program, as in that case data in the memory is never visited a second time. The video above contains an example of a Turing machine that detects whether or not an input string is of length 2^n for some $n$. It also demonstrates basic arithmetic with Turing machines.
 
 This encoding is capable but of course extremely low level from a programming language perspective. Moreover, the Turing model of computation, with it's restricted steps on the memory tape, don't make for an efficiant computer. The next step of the project of distributed computing at that level is thus a deeper look at the NEO virtual machine. More research will be performed...
