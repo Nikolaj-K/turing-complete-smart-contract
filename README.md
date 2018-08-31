@@ -44,7 +44,7 @@ As an example, the machine encoded as sequence of 3 strings of length three give
 detects whether an input string from the 3-letter-alphabet `{'x', '0', '1'}` contains the character '1'. It does encode the short program
 
 ```haskell
-foreach (char_on_tape)
+foreach (char : tape)
   if (current_state == start_state):
     if char is 'x':  overwrite with '0',  move right on tape,  go to start state,
     if char is '0':  overwrite with '0',  move right on tape,  go to start state,
