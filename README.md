@@ -35,17 +35,17 @@ holds, in this order, used alphabet size (2), accept state index (1), max execut
 
 #### Simplest example
 
-The machine encoded as sequence of 3 strings of length three
+As an example, the machine encoded as sequence of 3 strings of length three given by
 
 ```haskell
 "010, 010, 011"
 ```
 
-detects if an input string from the 3 letter alphabet `{'x', '0', '1'}` contrains the character '1'. It encodes the short program
+detects whether an input string from the 3-letter-alphabet `{'x', '0', '1'}` contains the character '1'. It does encode the short program
 
 ```haskell
-foreach (char on tape)
-  if (current state == start state):
+foreach (char_on_tape)
+  if (current_state == start_state):
     if char is 'x':  overwrite with '0',  move right on tape,  go to start state,
     if char is '0':  overwrite with '0',  move right on tape,  go to start state,
     if char is '1':  overwrite with '0',  move right on tape,  go to accept state,  return "Accepted!"
@@ -57,11 +57,9 @@ In such a way, a program with k states and possible m characters is of length 3 
 
 One short program is integer addition, stored under the program name `"add"` and addition of 3+3 is encoded by sequences of 1's seperated by a zero, i.e. `"1110111"`
 
-Finite state machines are particularly straight forward to program, as in that case data in the memory is never visited a second time. The video above contains an example of a Turing machine that detects whether or not an input string is of length 2^n for some $n$. It also demonstrates basic arithmetic with Turing machines.
+Finite state machines are particularly straight forward to program, as in that case data in the memory is never visited a second time. The video above contains an example of a Turing machine that detects whether or not an input string is of length 2^n for some n. It also demonstrates basic arithmetic with Turing machines.
 
-This encoding is capable but of course extremely low level from a programming language perspective. Moreover, the Turing model of computation, with it's restricted steps on the memory tape, don't make for an efficiant computer. The next step of the project of distributed computing at that level is thus a deeper look at the NEO virtual machine. More research will be performed...
-
-:)
+This encoding is capable but of course extremely low level, from a programming language perspective. Moreover, the Turing model of computation, with its restricted steps size on the memory tape, doesn't make for an efficient computer. 
 
 ### License
 This project is authored by Nikolaj Kuntner and is MIT licensed.
